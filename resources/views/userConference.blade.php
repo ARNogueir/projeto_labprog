@@ -45,6 +45,8 @@
                     </div>
                     <div class="col-md-8 col-6">
                         <td>{{ $conference->local }}</td>
+
+
                     </div>
                 </div>
                 <div class="row">
