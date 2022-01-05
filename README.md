@@ -12,10 +12,8 @@ In this project I learned how use some tools, check down on <b>Tools Used</b>.
 - **[MySQL](https://www.mysql.com)**
 - **[PHP 8](https://www.php.net/)**
 - **[SonarQube](https://www.sonarqube.org/)**
-- [![Quality gate](http://localhost:9000/api/project_badges/quality_gate?project=projeto_LabProg)]
-- (http://localhost:9000/dashboard?id=projeto_LabProg)
+[![Quality gate](http://localhost:9000/api/project_badges/quality_gate?project=projeto_LabProg)](http://localhost:9000/dashboard?id=projeto_LabProg)- (http://localhost:9000/dashboard?id=projeto_LabProg)
 - **[Bootstrap](https://getbootstrap.com/)**
 - **[PHP Unity](https://www.phpunity.com)**
 - **CSS**
 - **CI/CD**
-[![Quality gate](http://localhost:9000/api/project_badges/quality_gate?project=projeto_LabProg)](http://localhost:9000/dashboard?id=projeto_LabProg)
