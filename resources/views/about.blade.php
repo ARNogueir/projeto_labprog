@@ -28,7 +28,6 @@
                 &nbsp<a href="https://www.linkedin.com/in/arnogu">André Nogueira - Linkedin</a>
 
             </div>
-
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>

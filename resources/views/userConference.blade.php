@@ -5,7 +5,6 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
-
         <div class="container">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-link" href="{{ url('/dashboard') }}" class="nav-link">Informação Básica</a>
