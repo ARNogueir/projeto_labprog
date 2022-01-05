@@ -18,6 +18,9 @@
                     </div>
                     <div class="col-md-8 col-6"><br>
                         <td>{{ $conference->id}}</td>
+
+
+
                     </div>
                 </div>
                 <div class="row">
