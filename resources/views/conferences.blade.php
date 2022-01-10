@@ -21,6 +21,7 @@
                         <div class="col-md-8 col-6"><br>
                             <td>{{ $conference->id }}</td>
                         </div>
+
                     </div>
                     <div class="row">
                         <div class="col-sm-3 col-md-2 col-5">
