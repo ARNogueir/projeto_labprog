@@ -8,6 +8,8 @@
 <br>
 <br>
 <br>
+
+
 @if((Illuminate\Support\Facades\Auth::user()->admin) ==1)
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
