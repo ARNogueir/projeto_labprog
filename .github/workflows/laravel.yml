@@ -34,7 +34,6 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
       
-sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
