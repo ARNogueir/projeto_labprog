@@ -27,6 +27,8 @@ class PDFController extends Controller
                 ->attachData($pdf->output(), "registoConf.pdf");
         });
 
+
+
         return redirect(RouteServiceProvider::DASHBOARD);
     }
 }
