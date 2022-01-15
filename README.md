@@ -1,11 +1,10 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Laravel Project
+## Laravel Academic Project
 
-This is a Academic Laravel project.<br>
-In this project I learned how use some tools, check down on <b>Tools Used</b>.
+● Web Application, developed with Laravel and named “Plataforma de Conferências – Ciência e Sociedade”<br>
 
-## Tools Used
+● In this project, we learned how to use some tools:
 
 - **[Laravel 8](https://laravel.com)**
 - **[MailTrap](https://mailtrap.io)**
