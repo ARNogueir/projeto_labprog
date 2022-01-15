@@ -25,8 +25,9 @@ require './library/FileHandler.php';
 set_time_limit(0);
 
 // Make sure we have a timezone for date functions.
-if (ini_get('date.timezone') == '')
-    date_default_timezone_set( Webgrind_Config::$defaultTimezone );
+if (ini_get('date.timezone') == '') {
+    date_default_timezone_set(Webgrind_Config::$defaultTimezone);
+}
 
 try {
     switch (get('op')) {
@@ -36,7 +37,7 @@ try {
 
         case 'function_list':
             $dataFile = get('dataFile');
-            if ($dataFile=='0') {
+            if ($dataFile == '0') {
                 $files = Webgrind_FileHandler::getInstance()->getTraceList();
                 $dataFile = $files[0]['filename'];
             }
@@ -45,16 +46,16 @@ try {
             $shownTotal = 0;
             $breakdown = array('internal' => 0, 'procedural' => 0, 'class' => 0, 'include' => 0);
 
-            for ($i=0; $i<$reader->getFunctionCount(); $i++) {
+            for ($i = 0; $i < $reader->getFunctionCount(); $i++) {
                 $functionInfo = $reader->getFunctionInfo($i);
 
                 if (false !== strpos($functionInfo['functionName'], 'php::')) {
                     $breakdown['internal'] += $functionInfo['summedSelfCostRaw'];
                     $humanKind = 'internal';
                 } else if (false !== strpos($functionInfo['functionName'], 'require_once::') ||
-                          false !== strpos($functionInfo['functionName'], 'require::') ||
-                          false !== strpos($functionInfo['functionName'], 'include_once::') ||
-                          false !== strpos($functionInfo['functionName'], 'include::')) {
+                    false !== strpos($functionInfo['functionName'], 'require::') ||
+                    false !== strpos($functionInfo['functionName'], 'include_once::') ||
+                    false !== strpos($functionInfo['functionName'], 'include::')) {
                     $breakdown['include'] += $functionInfo['summedSelfCostRaw'];
                     $humanKind = 'include';
                 } else {
@@ -73,17 +74,18 @@ try {
                     $functions[$i]['humanKind'] = $humanKind;
                 }
             }
-            usort($functions,'costCmp');
+            usort($functions, 'costCmp');
 
-            $remainingCost = $shownTotal*get('showFraction');
+            $remainingCost = $shownTotal * get('showFraction');
 
             $result['functions'] = array();
             foreach ($functions as $function) {
                 $remainingCost -= $function['summedSelfCostRaw'];
                 $function['file'] = urlencode($function['file']);
                 $result['functions'][] = $function;
-                if ($remainingCost<0)
+                if ($remainingCost < 0) {
                     break;
+                }
             }
             $result['summedInvocationCount'] = $reader->getFunctionCount();
             $result['summedRunTime'] = $reader->formatCost($reader->getHeader('summary'), 'msec');
@@ -91,22 +93,22 @@ try {
             $result['invokeUrl'] = $reader->getHeader('cmd');
             $result['runs'] = $reader->getHeader('runs');
             $result['breakdown'] = $breakdown;
-            $result['mtime'] = date(Webgrind_Config::$dateFormat,filemtime(Webgrind_Config::xdebugOutputDir().$dataFile));
+            $result['mtime'] = date(Webgrind_Config::$dateFormat, filemtime(Webgrind_Config::xdebugOutputDir() . $dataFile));
 
             $creator = preg_replace('/[^0-9\.]/', '', $reader->getHeader('creator'));
             $result['linkToFunctionLine'] = version_compare($creator, '2.1') > 0;
 
             sendJson($result);
-        break;
+            break;
 
         case 'callinfo_list':
             $reader = Webgrind_FileHandler::getInstance()->getTraceReader(get('file'), get('costFormat', Webgrind_Config::$defaultCostformat));
             $functionNr = get('functionNr');
             $function = $reader->getFunctionInfo($functionNr);
 
-            $result = array('calledFrom'=>array(), 'subCalls'=>array());
+            $result = array('calledFrom' => array(), 'subCalls' => array());
             $foundInvocations = 0;
-            for ($i=0; $i<$function['calledFromInfoCount']; $i++) {
+            for ($i = 0; $i < $function['calledFromInfoCount']; $i++) {
                 $invo = $reader->getCalledFromInfo($functionNr, $i);
                 $foundInvocations += $invo['callCount'];
                 $callerInfo = $reader->getFunctionInfo($invo['functionNr']);
@@ -114,9 +116,9 @@ try {
                 $invo['callerFunctionName'] = $callerInfo['functionName'];
                 $result['calledFrom'][] = $invo;
             }
-            $result['calledByHost'] = ($foundInvocations<$function['invocationCount']);
+            $result['calledByHost'] = ($foundInvocations < $function['invocationCount']);
 
-            for ($i=0; $i<$function['subCallInfoCount']; $i++) {
+            for ($i = 0; $i < $function['subCallInfoCount']; $i++) {
                 $invo = $reader->getSubCallInfo($functionNr, $i);
                 $callInfo = $reader->getFunctionInfo($invo['functionNr']);
                 $invo['file'] = urlencode($function['file']); // Sub call to $callInfo['file'] but from $function['file']
@@ -124,7 +126,7 @@ try {
                 $result['subCalls'][] = $invo;
             }
             sendJson($result);
-        break;
+            break;
 
         case 'fileviewer':
             $file = get('file');
@@ -140,7 +142,7 @@ try {
                 }
             }
             require 'templates/fileviewer.phtml';
-        break;
+            break;
 
         case 'function_graph':
             $dataFile = get('dataFile');
@@ -150,24 +152,24 @@ try {
                 $dataFile = $files[0]['filename'];
             }
 
-            $filename = Webgrind_Config::storageDir().$dataFile.'-'.$showFraction.Webgrind_Config::$preprocessedSuffix.'.'.Webgrind_Config::$graphImageType;
+            $filename = Webgrind_Config::storageDir() . $dataFile . '-' . $showFraction . Webgrind_Config::$preprocessedSuffix . '.' . Webgrind_Config::$graphImageType;
             if (!file_exists($filename)) {
                 // Add enclosing quotes if needed
                 foreach (array('pythonExecutable', 'dotExecutable') as $exe) {
                     $item =& Webgrind_Config::$$exe;
                     if (strpos($item, ' ') !== false && !preg_match('/^".+"$/', $item)) {
-                        $item = '"'.$item.'"';
+                        $item = '"' . $item . '"';
                     }
                 }
-                shell_exec(Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction
-                           .' -f callgrind '.escapeshellarg(Webgrind_Config::xdebugOutputDir().$dataFile).' | '
-                           .Webgrind_Config::$dotExecutable.' -T'.Webgrind_Config::$graphImageType.' -o '.escapeshellarg($filename));
+                shell_exec(Webgrind_Config::$pythonExecutable . ' library/gprof2dot.py -n ' . $showFraction
+                    . ' -f callgrind ' . escapeshellarg(Webgrind_Config::xdebugOutputDir() . $dataFile) . ' | '
+                    . Webgrind_Config::$dotExecutable . ' -T' . Webgrind_Config::$graphImageType . ' -o ' . escapeshellarg($filename));
             }
 
             if (!file_exists($filename)) {
                 $file = $filename;
-                $message = 'Unable to generate <u>'.$file.'</u> via python: <u>'.Webgrind_Config::$pythonExecutable
-                          .'</u> and dot: <u>'.Webgrind_Config::$dotExecutable.'</u>. Please update config.php.';
+                $message = 'Unable to generate <u>' . $file . '</u> via python: <u>' . Webgrind_Config::$pythonExecutable
+                    . '</u> and dot: <u>' . Webgrind_Config::$dotExecutable . '</u>. Please update config.php.';
                 require 'templates/fileviewer.phtml';
                 break;
             }
@@ -175,21 +177,21 @@ try {
             if (Webgrind_Config::$graphImageType == 'svg') {
                 header('Content-Type: image/svg+xml');
             } else {
-                header('Content-Type: image/'.Webgrind_Config::$graphImageType);
+                header('Content-Type: image/' . Webgrind_Config::$graphImageType);
             }
             readfile($filename);
-        break;
+            break;
 
         case 'version_info':
-            $response = @file_get_contents('http://jokkedk.github.io/webgrind/webgrindupdate.json?version='.Webgrind_Config::$webgrindVersion);
+            $response = @file_get_contents('http://jokkedk.github.io/webgrind/webgrindupdate.json?version=' . Webgrind_Config::$webgrindVersion);
             if ($response) {
                 header('Content-type: application/json');
                 echo $response;
             }
-        break;
+            break;
 
         case 'download_link':
-            $file = Webgrind_Config::exposeServerFile(Webgrind_Config::xdebugOutputDir().get('file'));
+            $file = Webgrind_Config::exposeServerFile(Webgrind_Config::xdebugOutputDir() . get('file'));
 
             if (empty($file)) {
                 sendJson(array('error' => 'No file found or access denied!'));
@@ -197,11 +199,11 @@ try {
             }
 
             $params = array('op' => 'download_file', 'file' => get('file'));
-            sendJson(array('done' => '?'.http_build_query($params)));
-        break;
+            sendJson(array('done' => '?' . http_build_query($params)));
+            break;
 
         case 'download_file':
-            $file = Webgrind_Config::exposeServerFile(Webgrind_Config::xdebugOutputDir().get('file'));
+            $file = Webgrind_Config::exposeServerFile(Webgrind_Config::xdebugOutputDir() . get('file'));
 
             if (empty($file)) {
                 exit;
@@ -209,12 +211,12 @@ try {
 
             header('Cache-Control: public');
             header('Content-Description: File Transfer');
-            header('Content-Disposition: attachment; filename='.get('file'));
+            header('Content-Disposition: attachment; filename=' . get('file'));
             header('Content-Type: text/plain');
             header('Content-Transfer-Encoding: binary');
 
             readfile($file);
-        break;
+            break;
 
         case 'clear_files':
             $files = Webgrind_FileHandler::getInstance()->getTraceList();
@@ -224,40 +226,42 @@ try {
             }
             $format = array();
             foreach ($files as $file) {
-                unlink(Webgrind_Config::xdebugOutputDir().$file['filename']);
+                unlink(Webgrind_Config::xdebugOutputDir() . $file['filename']);
                 $format[] = preg_quote($file['filename'], '/');
             }
-            $files = preg_grep('/'.implode('|', $format).'/', scandir(Webgrind_Config::storageDir()));
+            $files = preg_grep('/' . implode('|', $format) . '/', scandir(Webgrind_Config::storageDir()));
             foreach ($files as $file) {
-                unlink(Webgrind_Config::storageDir().$file);
+                unlink(Webgrind_Config::storageDir() . $file);
             }
             sendJson(array('done' => true));
-        break;
+            break;
 
         default:
             $welcome = '';
             if (!file_exists(Webgrind_Config::storageDir()) || !is_writable(Webgrind_Config::storageDir())) {
-                $welcome .= 'Webgrind $storageDir does not exist or is not writeable: <code>'.Webgrind_Config::storageDir().'</code><br>';
+                $welcome .= 'Webgrind $storageDir does not exist or is not writeable: <code>' . Webgrind_Config::storageDir() . '</code><br>';
             }
             if (!file_exists(Webgrind_Config::xdebugOutputDir()) || !is_readable(Webgrind_Config::xdebugOutputDir())) {
-                $welcome .= 'Webgrind $profilerDir does not exist or is not readable: <code>'.Webgrind_Config::xdebugOutputDir().'</code><br>';
+                $welcome .= 'Webgrind $profilerDir does not exist or is not readable: <code>' . Webgrind_Config::xdebugOutputDir() . '</code><br>';
             }
 
             if ($welcome == '') {
-                $welcome = 'Select a cachegrind file above<br>(looking in <code>'.Webgrind_Config::xdebugOutputDir().'</code> for files matching <code>'.Webgrind_Config::xdebugOutputFormat().'</code>)';
+                $welcome = 'Select a cachegrind file above<br>(looking in <code>' . Webgrind_Config::xdebugOutputDir() . '</code> for files matching <code>' . Webgrind_Config::xdebugOutputFormat() . '</code>)';
             }
             require 'templates/index.phtml';
     }
 } catch (Exception $e) {
-    sendJson(array('error' => $e->getMessage().'<br>'.$e->getFile().', line '.$e->getLine()));
+    sendJson(array('error' => $e->getMessage() . '<br>' . $e->getFile() . ', line ' . $e->getLine()));
     return;
 }
 
-function get($param, $default=false) {
-    return (isset($_GET[$param])? $_GET[$param] : $default);
+function get($param, $default = false)
+{
+    return (isset($_GET[$param]) ? $_GET[$param] : $default);
 }
 
-function costCmp($a, $b) {
+function costCmp($a, $b)
+{
     $a = $a['summedSelfCostRaw'];
     $b = $b['summedSelfCostRaw'];
 
@@ -267,7 +271,8 @@ function costCmp($a, $b) {
     return ($a > $b) ? -1 : 1;
 }
 
-function sendJson($object) {
+function sendJson($object)
+{
     header('Content-type: application/json');
     echo json_encode($object);
 }

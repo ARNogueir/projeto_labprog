@@ -15,18 +15,21 @@
             <a class="nav-link" href="{{ url('/admin') }}" class="nav-link">
                 <button type="button" class="btn btn-outline-secondary">Utilizadores</button>
             </a>
-            <a class="nav-link" href="{{ url('/admin_conferences') }}" class="nav-link"><button type="button" class="btn btn-outline-secondary">Conferências</button></a>
+            <a class="nav-link" href="{{ url('/admin_conferences') }}" class="nav-link">
+                <button type="button" class="btn btn-outline-secondary">Conferências</button>
+            </a>
         </div>
     </nav>
 
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <table class="table table-hover">
+                <caption>admin</caption>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Perfil</th>
+                    <th id="id">ID</th>
+                    <th id="nome">Nome</th>
+                    <th id="email">E-mail</th>
+                    <th id="perfil">Perfil</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,9 +55,11 @@
                                     <a class="dropdown-item" href="">Editar Perfil</a>
                                     <a class="dropdown-item" href="admin/{{$user->id}}">Eliminar Perfil</a>
                                     @if($user->admin=='1')
-                                        <a class="dropdown-item" href="updateUser/{{$user->id}}">Tornar Utilizador Normal</a>
+                                        <a class="dropdown-item" href="updateUser/{{$user->id}}">Tornar Utilizador
+                                            Normal</a>
                                     @else
-                                        <a class="dropdown-item" href="updateAdmin/{{$user->id}}">Tornar Administrador</a>
+                                        <a class="dropdown-item" href="updateAdmin/{{$user->id}}">Tornar
+                                            Administrador</a>
                                     @endif
                                 </div>
                             </div>

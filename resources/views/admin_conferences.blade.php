@@ -22,14 +22,15 @@
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <table class="table table-hover">
+                <caption>admin_conf</caption>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Local</th>
-                    <th>lotação</th>
-                    <th>Inscritos</th>
-                    <th>Data</th>
+                    <th id="id">ID</th>
+                    <th id="nome">Nome</th>
+                    <th id="descricao">Descrição</th>
+                    <th id="local">Local</th>
+                    <th id="lotação">lotação</th>
+                    <th id="inscritos">Inscrito</th>
+                    <th id="data">Data</th>
                 </tr>
                 </thead>
                 <tbody>

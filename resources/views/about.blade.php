@@ -23,28 +23,28 @@
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fab fa-linkedin"></i></span>
+                    <span class="input-group-text"> <em class="fab fa-linkedin"></em></span>
                 </div>
                 &nbsp<a href="https://www.linkedin.com/in/arnogu">André Nogueira - Linkedin</a>
 
             </div>
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    <span class="input-group-text"> <em class="fa fa-envelope"></em> </span>
                 </div>
                 &nbsp37370@ufp.edu.pt
             </div>
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
+                    <span class="input-group-text"> <em class="fas fa-map-marker-alt"></em> </span>
                 </div>
                 &nbspPenafiel, Porto
             </div>
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fas fa-university"></i> </span>
+                    <span class="input-group-text"> <em class="fas fa-university"></em> </span>
                 </div>
                 &nbspUniversidade Fernando Pessoa (UFP)
             </div>
@@ -53,7 +53,7 @@
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fab fa-linkedin"></i></span>
+                    <span class="input-group-text"> <em class="fab fa-linkedin"></em></span>
                 </div>
 
                 &nbsp<a href="https://www.linkedin.com/in/flaviojnsilva">Flávio Silva - Linkedin</a>
@@ -61,21 +61,21 @@
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    <span class="input-group-text"> <em class="fa fa-envelope"></em> </span>
                 </div>
                 &nbsp26097@ufp.edu.pt
             </div>
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i> </span>
+                    <span class="input-group-text"> <em class="fas fa-map-marker-alt"></em> </span>
                 </div>
                 &nbspGandra, Porto
             </div>
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fas fa-university"></i> </span>
+                    <span class="input-group-text"> <em class="fas fa-university"></em> </span>
                 </div>
                 &nbspUniversidade Fernando Pessoa (UFP)
             </div>

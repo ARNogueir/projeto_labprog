@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+<head>
+    <title>conf</title>
+</head>
 @include('components.head')
 
 <body>

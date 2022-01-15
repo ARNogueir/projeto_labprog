@@ -80,11 +80,6 @@ class UsersController extends Controller
 //
     }
 
-    public function edit($id)
-    {
-
-    }
-
     /**
      * Remove the specified resource from storage.
      *
