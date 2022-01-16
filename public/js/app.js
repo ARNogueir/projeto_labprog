@@ -1363,8 +1363,6 @@
                     return targetIsExtensible;
                 }
 
-                setPrototypeOf(shadowTarget, prototype) {
-                }
 
                 getPrototypeOf(shadowTarget) {
                     const {originalTarget} = this;
@@ -1473,9 +1471,6 @@
                 ownKeys(shadowTarget) {
                     const {originalTarget} = this;
                     return ArrayConcat.call(getOwnPropertyNames(originalTarget), getOwnPropertySymbols(originalTarget));
-                }
-
-                setPrototypeOf(shadowTarget, prototype) {
                 }
 
                 getOwnPropertyDescriptor(shadowTarget, key) {
@@ -9804,6 +9799,7 @@
 
                             case mapTag:
                                 var convert = mapToArray;
+                                break;
 
                             case setTag:
                                 var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
@@ -19883,6 +19879,7 @@
                      * // => [undefined, undefined]
                      */
                     function noop() {
+                        return undefined;
                         // No operation performed.
                     }
 
@@ -21496,6 +21493,7 @@
         module.exports = function (module) {
             if (!module.webpackPolyfill) {
                 module.deprecate = function () {
+                    return undefined;
                 };
                 module.paths = [];
                 // module.parent = undefined by default
