@@ -8019,7 +8019,8 @@
                      */
                     function baseSet(object, path, value, customizer) {
                         if (!isObject(object)) {
-                            return object;
+                            //return object;
+                            return undefined;
                         }
                         path = castPath(path, object);
 
@@ -8033,7 +8034,8 @@
                                 newValue = value;
 
                             if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
-                                return object;
+                                //return object;
+                                return undefined;
                             }
 
                             if (index != lastIndex) {
@@ -8048,7 +8050,8 @@
                             assignValue(nested, key, newValue);
                             nested = nested[key];
                         }
-                        return object;
+                        return undefined;
+                        //return object;
                     }
 
                     /**
