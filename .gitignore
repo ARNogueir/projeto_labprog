@@ -10,3 +10,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/vendor/laravel/sail/runtimes/7.4/php.ini
