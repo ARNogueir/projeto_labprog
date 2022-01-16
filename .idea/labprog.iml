@@ -118,6 +118,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/07" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/25" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/b8" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/c4" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/ce" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/f3" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
