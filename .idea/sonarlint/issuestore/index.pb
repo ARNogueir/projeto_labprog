@@ -119,8 +119,6 @@ M
 K
 tests/Feature/BasicTest.php,9/2/927cf11bd64e246390669f72df9c723fb46b31c7
 C
-config/database.php,6/9/69e3bd8ddf957a32ec5a3b80a87f8cc4bfe36a27
-C
 config/services.php,6/7/67cde7ebf0c82e44eedc43a9b83d4fa13c684078
 G
 config/broadcasting.php,b/a/bac236f5cc1ad8412b3ade7938cd9a596cb29b3c
