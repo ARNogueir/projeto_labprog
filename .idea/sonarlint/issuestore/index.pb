@@ -3,12 +3,16 @@
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 =
 .editorconfig,6/2/626a747c8694eaae66f2afb3d1a745b045782c70
+;
+phpunit.xml,3/5/357499abc6fdfbad45ccc062a427f5f62fb2e3cd
 >
 .gitattributes,2/4/24139dae656713ba861751fb2c2ac38839349a7a
 =
 composer.lock,c/3/c3262e2a0879195bd6a727e90f768bc85ad79ffd
 <
 .styleci.yml,b/e/bef5ea44a7455cbdeddf8c96649dfae70da325af
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 :
 
 server.php,d/3/d37d4b14024cef95b9034014685591a5ae93abf5
@@ -413,8 +417,6 @@ a
 1public/webgrind-master/templates/fileviewer.phtml,4/9/49195421ace7c66c50ad35af924c302d516ac910
 \
 ,public/webgrind-master/templates/index.phtml,9/c/9cd3096d55ee59ee11c177e6fe3a4b5f80324b29
-K
-.github/workflows/build.yml,f/e/fe77d5d1439f26e353a42bbd38dece2467ff6558
 t
 Dstorage/framework/views/21623be2484368b8fbf9afeed083182f4fd491e9.php,a/0/a0d43e8ab65d554de38c3684a0f3605495b85324
 t
@@ -429,8 +431,6 @@ t
 Dstorage/framework/views/a72de4c8fef3f12d73dc9ea6eb5213a18bf9ece0.php,b/f/bf18e9a09d2d35af7a4e43c72c0ed7d5c455384a
 Q
 !public/webgrind-master/config.php,5/7/579e0245c5d060129f3b884a1896c6a1c1e5f8e6
-@
-public/index.php,0/e/0e61f67641b441bb3ee38e903c594d99cafa14b4
 O
 resources/views/about.blade.php,4/6/4668c38781542e74e5a895c002b7e88e5fbb3343
 O
@@ -451,8 +451,12 @@ X
 -resources/views/conf/conf_violencia.blade.php,8/7/874303084a66079a7301b23136d1216be5b550cb
 [
 +resources/views/conf/conf_webinar.blade.php,0/5/05c8369d4755c50013431a6d576139275ad07435
+P
+ public/webgrind-master/index.php,5/0/50a593fe0f8f711f61f84cac8895c804df99c0d9
 [
 +resources/views/emails/myTestMail.blade.php,b/d/bd91bfd45385b83bb435ae94d0c0562b2728f218
+V
+&app/Providers/RouteServiceProvider.php,d/4/d4febfd545b5694c9448dd8d6de9bf0531b0db61
 U
 %resources/views/updateAdmin.blade.php,0/0/00879769137d7ae22ff16884dfd58dfd58763c2a
 T
