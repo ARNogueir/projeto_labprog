@@ -117,8 +117,6 @@ Z
 *tests/Feature/PasswordConfirmationTest.php,a/f/af8d1ff2b92ca8b9d7a6e90c050aec36e0fa9c96
 W
 'tests/Feature/EmailVerificationTest.php,6/9/69250a793c1da4c5c2687b84eb04dfb9f4f7dfb3
-T
-$tests/Feature/AuthenticationTest.php,6/7/6763e018f73f5d5bb8a94fa985062a66ba9fc481
 S
 #tests/Feature/PasswordResetTest.php,c/5/c54c50ac4edadc48bcab8f78a85a36fdde4b0245
 M
@@ -441,3 +439,35 @@ Q
 !public/webgrind-master/config.php,5/7/579e0245c5d060129f3b884a1896c6a1c1e5f8e6
 @
 public/index.php,0/e/0e61f67641b441bb3ee38e903c594d99cafa14b4
+O
+resources/views/about.blade.php,4/6/4668c38781542e74e5a895c002b7e88e5fbb3343
+O
+resources/views/admin.blade.php,5/8/582108d5ae6e8fff60008467c7fa720040ee5307
+[
++resources/views/admin_conferences.blade.php,d/3/d36fa5827249934cd19578c9a25681324b228ca1
+S
+#resources/views/conf/conf.blade.php,d/6/d6e46771f8731f559dc8c8a37e2c59c9f2fcd915
+\
+,resources/views/conf/conf_conversa.blade.php,0/a/0a2222fe397ecf478801487abad98e748277a16d
+Y
+)resources/views/conf/conf_covid.blade.php,c/d/cd64fc31accf0c108be1366578ea63599ed26093
+X
+(resources/views/conf/conf_dpsc.blade.php,8/c/8cfc2691274cc2a0ed41bd977afc1ea3b86c923e
+X
+(resources/views/conf/conf_stay.blade.php,e/e/ee515f100177726146b071127c8c06b847fc238f
+]
+-resources/views/conf/conf_violencia.blade.php,8/7/874303084a66079a7301b23136d1216be5b550cb
+[
++resources/views/conf/conf_webinar.blade.php,0/5/05c8369d4755c50013431a6d576139275ad07435
+P
+ public/webgrind-master/index.php,5/0/50a593fe0f8f711f61f84cac8895c804df99c0d9
+[
++resources/views/emails/myTestMail.blade.php,b/d/bd91bfd45385b83bb435ae94d0c0562b2728f218
+V
+&app/Providers/RouteServiceProvider.php,d/4/d4febfd545b5694c9448dd8d6de9bf0531b0db61
+U
+%resources/views/updateAdmin.blade.php,0/0/00879769137d7ae22ff16884dfd58dfd58763c2a
+T
+$resources/views/updateUser.blade.php,8/6/86dd11470565f9982b3da6dc81bc5432d32350de
+X
+(app/Http/Controllers/UsersController.php,e/f/ef37ff5edad2b115ffe7b9340d3ade43730bbbe6
