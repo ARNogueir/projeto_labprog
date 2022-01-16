@@ -11,8 +11,6 @@
 composer.lock,c/3/c3262e2a0879195bd6a727e90f768bc85ad79ffd
 <
 .styleci.yml,b/e/bef5ea44a7455cbdeddf8c96649dfae70da325af
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 :
 
 server.php,d/3/d37d4b14024cef95b9034014685591a5ae93abf5
@@ -61,8 +59,6 @@ S
 #app/Http/Controllers/Controller.php,2/e/2ed23e1749f02eb8e561f0a531d07863e7cf9fb9
 X
 (app/Http/Controllers/PagesController.php,8/8/888e91e0a0d2729f5e90c192c8f9d5767c6ed267
-V
-&app/Http/Controllers/PDFController.php,8/1/81a91d0fd48449d31ac260679e11c9446c05801c
 c
 3app/Http/Controllers/Auth/VerifyEmailController.php,3/f/3f7c71ab9c3a746fa5983593a0ccce359a284cc4
 i
@@ -421,8 +417,6 @@ a
 ,public/webgrind-master/templates/index.phtml,9/c/9cd3096d55ee59ee11c177e6fe3a4b5f80324b29
 K
 .github/workflows/build.yml,f/e/fe77d5d1439f26e353a42bbd38dece2467ff6558
-M
-.github/workflows/laravel.yml,0/f/0f7f0d1bf4bcb30c4fd35982ecd73aa8f8235463
 t
 Dstorage/framework/views/21623be2484368b8fbf9afeed083182f4fd491e9.php,a/0/a0d43e8ab65d554de38c3684a0f3605495b85324
 t
@@ -459,12 +453,8 @@ X
 -resources/views/conf/conf_violencia.blade.php,8/7/874303084a66079a7301b23136d1216be5b550cb
 [
 +resources/views/conf/conf_webinar.blade.php,0/5/05c8369d4755c50013431a6d576139275ad07435
-P
- public/webgrind-master/index.php,5/0/50a593fe0f8f711f61f84cac8895c804df99c0d9
 [
 +resources/views/emails/myTestMail.blade.php,b/d/bd91bfd45385b83bb435ae94d0c0562b2728f218
-V
-&app/Providers/RouteServiceProvider.php,d/4/d4febfd545b5694c9448dd8d6de9bf0531b0db61
 U
 %resources/views/updateAdmin.blade.php,0/0/00879769137d7ae22ff16884dfd58dfd58763c2a
 T

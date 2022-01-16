@@ -19,9 +19,6 @@ class Webgrind_MasterConfig
 require './config.php';
 require './library/FileHandler.php';
 
-// TODO: Errorhandling:
-//         No files, outputdir not writable
-
 set_time_limit(0);
 
 // Make sure we have a timezone for date functions.
